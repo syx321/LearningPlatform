@@ -6,13 +6,20 @@
 //
 
 import UIKit
+import MobileVLCKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         
     }
 
+}
 
+extension ViewController: VLCMediaPlayerDelegate {
+    
 }

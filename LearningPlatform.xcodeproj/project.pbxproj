@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */; };
+		4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF229CAAF74003C40C5 /* Assembler.swift */; };
 		4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */; };
 		4DB65D4329B85C41006C8A6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D4229B85C41006C8A6A /* ViewController.swift */; };
 		4DB65D4629B85C41006C8A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4429B85C41006C8A6A /* Main.storyboard */; };
@@ -21,10 +23,17 @@
 		4DB65D6829B86716006C8A6A /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D6729B86716006C8A6A /* Date+Extension.swift */; };
 		4DB65D6A29B8695A006C8A6A /* FoundationConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D6929B8695A006C8A6A /* FoundationConst.swift */; };
 		4DB65D6C29B86984006C8A6A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D6B29B86984006C8A6A /* Array+Extension.swift */; };
+		4DB65D6E29B89660006C8A6A /* AppSetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D6D29B89660006C8A6A /* AppSetupManager.swift */; };
+		4DB65D7029B896D7006C8A6A /* MainFrameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D6F29B896D7006C8A6A /* MainFrameHandler.swift */; };
+		4DB65D7229B896F0006C8A6A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D7129B896F0006C8A6A /* MainTabBarController.swift */; };
+		4DB65D7729B9864D006C8A6A /* MainPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D7629B9864D006C8A6A /* MainPageModule.swift */; };
+		4DB65D7929B98663006C8A6A /* MinePageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D7829B98663006C8A6A /* MinePageModule.swift */; };
 		6556E9C0DBF495FFBD5F3F07 /* Pods_LearningPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C315FC1BF30390D320862432 /* Pods_LearningPlatform.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPDIContainer.swift; sourceTree = "<group>"; };
+		4D353EF229CAAF74003C40C5 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		4DB65D3B29B85C41006C8A6A /* LearningPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB65D4229B85C41006C8A6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +50,11 @@
 		4DB65D6729B86716006C8A6A /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		4DB65D6929B8695A006C8A6A /* FoundationConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationConst.swift; sourceTree = "<group>"; };
 		4DB65D6B29B86984006C8A6A /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		4DB65D6D29B89660006C8A6A /* AppSetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetupManager.swift; sourceTree = "<group>"; };
+		4DB65D6F29B896D7006C8A6A /* MainFrameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFrameHandler.swift; sourceTree = "<group>"; };
+		4DB65D7129B896F0006C8A6A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		4DB65D7629B9864D006C8A6A /* MainPageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModule.swift; sourceTree = "<group>"; };
+		4DB65D7829B98663006C8A6A /* MinePageModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinePageModule.swift; sourceTree = "<group>"; };
 		54607E492495984EE9A3D1F6 /* Pods-LearningPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningPlatform.debug.xcconfig"; path = "Target Support Files/Pods-LearningPlatform/Pods-LearningPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		8765CB8BCF75FC87B7AE2420 /* Pods-LearningPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningPlatform.release.xcconfig"; path = "Target Support Files/Pods-LearningPlatform/Pods-LearningPlatform.release.xcconfig"; sourceTree = "<group>"; };
 		C315FC1BF30390D320862432 /* Pods_LearningPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D353EED29CAAE90003C40C5 /* DIRegisterCenter */ = {
+			isa = PBXGroup;
+			children = (
+				4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */,
+				4D353EF229CAAF74003C40C5 /* Assembler.swift */,
+			);
+			path = DIRegisterCenter;
+			sourceTree = "<group>";
+		};
 		4DB65D3229B85C41006C8A6A = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +102,12 @@
 		4DB65D3D29B85C41006C8A6A /* LearningPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				4DB65D7529B98639006C8A6A /* Modules */,
 				4DB65D5429B862DF006C8A6A /* MainTabBar */,
 				4DB65D5329B861FB006C8A6A /* Extension */,
 				4DB65D5229B861F2006C8A6A /* Core */,
 				4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */,
+				4DB65D6D29B89660006C8A6A /* AppSetupManager.swift */,
 				4DB65D4229B85C41006C8A6A /* ViewController.swift */,
 				4DB65D4429B85C41006C8A6A /* Main.storyboard */,
 				4DB65D4729B85C43006C8A6A /* Assets.xcassets */,
@@ -120,6 +145,8 @@
 		4DB65D5429B862DF006C8A6A /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				4DB65D6F29B896D7006C8A6A /* MainFrameHandler.swift */,
+				4DB65D7129B896F0006C8A6A /* MainTabBarController.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -152,6 +179,32 @@
 				4DB65D6329B86671006C8A6A /* KVStorage.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		4DB65D7329B98617006C8A6A /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				4DB65D7629B9864D006C8A6A /* MainPageModule.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		4DB65D7429B9862E006C8A6A /* MinePage */ = {
+			isa = PBXGroup;
+			children = (
+				4DB65D7829B98663006C8A6A /* MinePageModule.swift */,
+			);
+			path = MinePage;
+			sourceTree = "<group>";
+		};
+		4DB65D7529B98639006C8A6A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4D353EED29CAAE90003C40C5 /* DIRegisterCenter */,
+				4DB65D7429B9862E006C8A6A /* MinePage */,
+				4DB65D7329B98617006C8A6A /* MainPage */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		6A5DA629B4A993B480B6827B /* Frameworks */ = {
@@ -290,10 +343,17 @@
 				4DB65D5A29B8653B006C8A6A /* UIView+Extension.swift in Sources */,
 				4DB65D4329B85C41006C8A6A /* ViewController.swift in Sources */,
 				4DB65D6C29B86984006C8A6A /* Array+Extension.swift in Sources */,
+				4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */,
+				4DB65D7029B896D7006C8A6A /* MainFrameHandler.swift in Sources */,
 				4DB65D6129B86625006C8A6A /* Int+Extension.swift in Sources */,
+				4DB65D6E29B89660006C8A6A /* AppSetupManager.swift in Sources */,
 				4DB65D5C29B86569006C8A6A /* Float+Extension.swift in Sources */,
 				4DB65D6629B866BF006C8A6A /* Optional+Extension.swift in Sources */,
 				4DB65D6429B86671006C8A6A /* KVStorage.swift in Sources */,
+				4DB65D7229B896F0006C8A6A /* MainTabBarController.swift in Sources */,
+				4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */,
+				4DB65D7929B98663006C8A6A /* MinePageModule.swift in Sources */,
+				4DB65D7729B9864D006C8A6A /* MainPageModule.swift in Sources */,
 				4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */,
 				4DB65D6A29B8695A006C8A6A /* FoundationConst.swift in Sources */,
 				4DB65D6829B86716006C8A6A /* Date+Extension.swift in Sources */,
