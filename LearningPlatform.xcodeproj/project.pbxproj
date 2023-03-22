@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */; };
 		4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF229CAAF74003C40C5 /* Assembler.swift */; };
+		4D353EF529CADE55003C40C5 /* MainFrameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF429CADE55003C40C5 /* MainFrameModule.swift */; };
+		4D353EF729CADEEE003C40C5 /* DIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF629CADEEE003C40C5 /* DIModule.swift */; };
 		4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */; };
 		4DB65D4329B85C41006C8A6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D4229B85C41006C8A6A /* ViewController.swift */; };
 		4DB65D4629B85C41006C8A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4429B85C41006C8A6A /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPDIContainer.swift; sourceTree = "<group>"; };
 		4D353EF229CAAF74003C40C5 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		4D353EF429CADE55003C40C5 /* MainFrameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFrameModule.swift; sourceTree = "<group>"; };
+		4D353EF629CADEEE003C40C5 /* DIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIModule.swift; sourceTree = "<group>"; };
 		4DB65D3B29B85C41006C8A6A /* LearningPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB65D4229B85C41006C8A6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			children = (
 				4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */,
 				4D353EF229CAAF74003C40C5 /* Assembler.swift */,
+				4D353EF629CADEEE003C40C5 /* DIModule.swift */,
 			);
 			path = DIRegisterCenter;
 			sourceTree = "<group>";
@@ -103,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				4DB65D7529B98639006C8A6A /* Modules */,
-				4DB65D5429B862DF006C8A6A /* MainTabBar */,
 				4DB65D5329B861FB006C8A6A /* Extension */,
 				4DB65D5229B861F2006C8A6A /* Core */,
 				4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */,
@@ -122,7 +126,6 @@
 			children = (
 				4DB65D6229B86659006C8A6A /* Util */,
 				4DB65D5D29B865D2006C8A6A /* UI */,
-				4DB65D5629B86441006C8A6A /* Model */,
 				4DB65D5529B8642F006C8A6A /* Interface */,
 			);
 			path = Core;
@@ -147,6 +150,7 @@
 			children = (
 				4DB65D6F29B896D7006C8A6A /* MainFrameHandler.swift */,
 				4DB65D7129B896F0006C8A6A /* MainTabBarController.swift */,
+				4D353EF429CADE55003C40C5 /* MainFrameModule.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -156,13 +160,6 @@
 			children = (
 			);
 			path = Interface;
-			sourceTree = "<group>";
-		};
-		4DB65D5629B86441006C8A6A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4DB65D5D29B865D2006C8A6A /* UI */ = {
@@ -200,6 +197,7 @@
 		4DB65D7529B98639006C8A6A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4DB65D5429B862DF006C8A6A /* MainTabBar */,
 				4D353EED29CAAE90003C40C5 /* DIRegisterCenter */,
 				4DB65D7429B9862E006C8A6A /* MinePage */,
 				4DB65D7329B98617006C8A6A /* MainPage */,
@@ -347,7 +345,9 @@
 				4DB65D7029B896D7006C8A6A /* MainFrameHandler.swift in Sources */,
 				4DB65D6129B86625006C8A6A /* Int+Extension.swift in Sources */,
 				4DB65D6E29B89660006C8A6A /* AppSetupManager.swift in Sources */,
+				4D353EF729CADEEE003C40C5 /* DIModule.swift in Sources */,
 				4DB65D5C29B86569006C8A6A /* Float+Extension.swift in Sources */,
+				4D353EF529CADE55003C40C5 /* MainFrameModule.swift in Sources */,
 				4DB65D6629B866BF006C8A6A /* Optional+Extension.swift in Sources */,
 				4DB65D6429B86671006C8A6A /* KVStorage.swift in Sources */,
 				4DB65D7229B896F0006C8A6A /* MainTabBarController.swift in Sources */,

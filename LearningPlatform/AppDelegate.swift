@@ -14,16 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         /// 注册模块module
-        return true
+        AppSetupManager.shared.registerModule(MainFrameModule())
+        AppSetupManager.shared.registerModule(DIModule())
+        AppSetupManager.shared.registerModule(MainPageModule())
+        AppSetupManager.shared.registerModule(MinePageModule())
+        
+        return AppSetupManager.shared.application(application, willFinishLaunchingWithOptions: launchOptions)
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow()
         window?.makeKeyAndVisible()
-        MainFrameHandler.createMainTabBarController()
         
-        return true
+        return AppSetupManager.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
 }

@@ -9,13 +9,21 @@ import Foundation
 import UIKit
 
 protocol AppSetupManagerModule: AnyObject {
+    /// 即将完成启动
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool
+    /// 已经完成启动
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    /// 用户登陆
+    func userDidLogin()
+    /// 用户退出登陆
+    func userDidLogout()
 }
 
 extension AppSetupManagerModule {
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-        return true
-    }
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool { return true }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { return true }
+    func userDidLogin() {}
+    func userDidLogout() {}
 }
 
 class AppSetupManager {
@@ -43,8 +51,26 @@ class AppSetupManager {
                 return false
             }
         }
-        
         return true
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        var result = true
+        for module in registeredModules {
+            result = module.application(application, didFinishLaunchingWithOptions: launchOptions)
+            if !result {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func userDidLogin() {
+        registeredModules.forEach { $0.userDidLogin() }
+    }
+    
+    func userDidLogout() {
+        registeredModules.forEach { $0.userDidLogout() }
     }
     
 }
