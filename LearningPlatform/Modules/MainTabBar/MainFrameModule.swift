@@ -8,7 +8,20 @@
 import Foundation
 import UIKit
 
-class MainFrameModule: AppSetupManagerModule {
+protocol MainFrameModuleService {
+    
+}
+
+class MainFrameModule: MainFrameModuleService {
+    private let tabbarController = MainFrameHandler.mainTabBarController
+    
+    init(resolver: DIResolvable?) {
+        tabbarController.resolver = resolver
+    }
+    
+}
+
+extension MainFrameModule: AppSetupManagerModule {
     /// 即将完成启动
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         return true

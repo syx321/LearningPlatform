@@ -15,5 +15,5 @@ target 'LearningPlatform' do
   pod 'YYText'
   pod 'YYImage'
   pod 'MJRefresh'
-  
+
 end

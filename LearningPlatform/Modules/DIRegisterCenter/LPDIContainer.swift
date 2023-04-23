@@ -53,7 +53,7 @@ final class DIContainer {
 }
 
 extension DIContainer: DIContainering {
-    func register<P>(_ proto: P.Type, name: String?, scopeType: DIScopeType, factory: @escaping (DIResolvable) -> P, completedHandler: ((P, DIResolvable) -> Void)?) {
+    func register<P>(_ proto: P.Type, name: String? = nil, scopeType: DIScopeType, factory: @escaping (DIResolvable) -> P, completedHandler: ((P, DIResolvable) -> Void)? = nil) {
         let entry = container.register(proto, name: name) { [weak self](resolver) -> P in
             return factory(self!)
         }.inObjectScope(scopeMapper(scopeType))

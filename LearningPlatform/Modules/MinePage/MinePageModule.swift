@@ -8,6 +8,22 @@
 import Foundation
 import UIKit
 
-class MinePageModule: AppSetupManagerModule {
+protocol MinePageModuleService {
+    func createMainPageController() -> MinePageController
+}
+
+class MinePageModule: MinePageModuleService {
+    private let resolver: DIResolvable?
+    init(resolver: DIResolvable?) {
+        self.resolver = resolver
+    }
+    
+    func createMainPageController() -> MinePageController {
+        MinePageController(resolver: resolver)
+    }
+    
+}
+
+extension MinePageModule: AppSetupManagerModule {
     
 }

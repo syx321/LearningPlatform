@@ -10,10 +10,10 @@
 		4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */; };
 		4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF229CAAF74003C40C5 /* Assembler.swift */; };
 		4D353EF529CADE55003C40C5 /* MainFrameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF429CADE55003C40C5 /* MainFrameModule.swift */; };
-		4D353EF729CADEEE003C40C5 /* DIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF629CADEEE003C40C5 /* DIModule.swift */; };
+		4D5A7EBD29F3DE92008EC989 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A7EBC29F3DE92008EC989 /* MainPageController.swift */; };
+		4D5A7EBF29F3E19F008EC989 /* MinePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A7EBE29F3E19F008EC989 /* MinePageController.swift */; };
+		4D8BBD7B29F405E900332A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8BBD7929F405E900332A7F /* Main.storyboard */; };
 		4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */; };
-		4DB65D4329B85C41006C8A6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D4229B85C41006C8A6A /* ViewController.swift */; };
-		4DB65D4629B85C41006C8A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4429B85C41006C8A6A /* Main.storyboard */; };
 		4DB65D4829B85C43006C8A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4729B85C43006C8A6A /* Assets.xcassets */; };
 		4DB65D4B29B85C43006C8A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4929B85C43006C8A6A /* LaunchScreen.storyboard */; };
 		4DB65D5A29B8653B006C8A6A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D5929B8653B006C8A6A /* UIView+Extension.swift */; };
@@ -37,11 +37,12 @@
 		4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPDIContainer.swift; sourceTree = "<group>"; };
 		4D353EF229CAAF74003C40C5 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		4D353EF429CADE55003C40C5 /* MainFrameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFrameModule.swift; sourceTree = "<group>"; };
-		4D353EF629CADEEE003C40C5 /* DIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIModule.swift; sourceTree = "<group>"; };
+		4D5A7EBC29F3DE92008EC989 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
+		4D5A7EBE29F3E19F008EC989 /* MinePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinePageController.swift; sourceTree = "<group>"; };
+		4D60939A29DDA5CD009B1C25 /* IJKPlayerFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = IJKPlayerFramework.framework; sourceTree = "<group>"; };
+		4D8BBD7A29F405E900332A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DB65D3B29B85C41006C8A6A /* LearningPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DB65D4229B85C41006C8A6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4DB65D4529B85C41006C8A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DB65D4729B85C43006C8A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DB65D4A29B85C43006C8A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DB65D4C29B85C43006C8A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 			children = (
 				4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */,
 				4D353EF229CAAF74003C40C5 /* Assembler.swift */,
-				4D353EF629CADEEE003C40C5 /* DIModule.swift */,
 			);
 			path = DIRegisterCenter;
 			sourceTree = "<group>";
@@ -108,12 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				4DB65D7529B98639006C8A6A /* Modules */,
-				4DB65D5329B861FB006C8A6A /* Extension */,
 				4DB65D5229B861F2006C8A6A /* Core */,
 				4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */,
+				4D8BBD7929F405E900332A7F /* Main.storyboard */,
 				4DB65D6D29B89660006C8A6A /* AppSetupManager.swift */,
-				4DB65D4229B85C41006C8A6A /* ViewController.swift */,
-				4DB65D4429B85C41006C8A6A /* Main.storyboard */,
 				4DB65D4729B85C43006C8A6A /* Assets.xcassets */,
 				4DB65D4929B85C43006C8A6A /* LaunchScreen.storyboard */,
 				4DB65D4C29B85C43006C8A6A /* Info.plist */,
@@ -124,6 +122,7 @@
 		4DB65D5229B861F2006C8A6A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4DB65D5329B861FB006C8A6A /* Extension */,
 				4DB65D6229B86659006C8A6A /* Util */,
 				4DB65D5D29B865D2006C8A6A /* UI */,
 				4DB65D5529B8642F006C8A6A /* Interface */,
@@ -182,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4DB65D7629B9864D006C8A6A /* MainPageModule.swift */,
+				4D5A7EBC29F3DE92008EC989 /* MainPageController.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -190,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4DB65D7829B98663006C8A6A /* MinePageModule.swift */,
+				4D5A7EBE29F3E19F008EC989 /* MinePageController.swift */,
 			);
 			path = MinePage;
 			sourceTree = "<group>";
@@ -208,6 +209,7 @@
 		6A5DA629B4A993B480B6827B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D60939A29DDA5CD009B1C25 /* IJKPlayerFramework.framework */,
 				C315FC1BF30390D320862432 /* Pods_LearningPlatform.framework */,
 			);
 			name = Frameworks;
@@ -282,9 +284,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8BBD7B29F405E900332A7F /* Main.storyboard in Resources */,
 				4DB65D4B29B85C43006C8A6A /* LaunchScreen.storyboard in Resources */,
 				4DB65D4829B85C43006C8A6A /* Assets.xcassets in Resources */,
-				4DB65D4629B85C41006C8A6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,13 +341,12 @@
 			files = (
 				4DB65D5F29B865DB006C8A6A /* UIConst.swift in Sources */,
 				4DB65D5A29B8653B006C8A6A /* UIView+Extension.swift in Sources */,
-				4DB65D4329B85C41006C8A6A /* ViewController.swift in Sources */,
 				4DB65D6C29B86984006C8A6A /* Array+Extension.swift in Sources */,
 				4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */,
 				4DB65D7029B896D7006C8A6A /* MainFrameHandler.swift in Sources */,
+				4D5A7EBF29F3E19F008EC989 /* MinePageController.swift in Sources */,
 				4DB65D6129B86625006C8A6A /* Int+Extension.swift in Sources */,
 				4DB65D6E29B89660006C8A6A /* AppSetupManager.swift in Sources */,
-				4D353EF729CADEEE003C40C5 /* DIModule.swift in Sources */,
 				4DB65D5C29B86569006C8A6A /* Float+Extension.swift in Sources */,
 				4D353EF529CADE55003C40C5 /* MainFrameModule.swift in Sources */,
 				4DB65D6629B866BF006C8A6A /* Optional+Extension.swift in Sources */,
@@ -356,6 +357,7 @@
 				4DB65D7729B9864D006C8A6A /* MainPageModule.swift in Sources */,
 				4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */,
 				4DB65D6A29B8695A006C8A6A /* FoundationConst.swift in Sources */,
+				4D5A7EBD29F3DE92008EC989 /* MainPageController.swift in Sources */,
 				4DB65D6829B86716006C8A6A /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,10 +365,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4DB65D4429B85C41006C8A6A /* Main.storyboard */ = {
+		4D8BBD7929F405E900332A7F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4DB65D4529B85C41006C8A6A /* Base */,
+				4D8BBD7A29F405E900332A7F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -517,6 +519,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = syx.LearningPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,6 +552,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = syx.LearningPlatform;

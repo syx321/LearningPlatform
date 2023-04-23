@@ -15,13 +15,30 @@ final class Assembler {
     }
     
     private let container = DIContainer(parent: nil)
-    private weak var activeRoomResolver: DIResolvable? // 当前活跃房间的解析器
 }
 
 extension Assembler: LiveAssembling {
     /// 在模块启动时调用
     func registCommonService() {
+        container.register(DIResolvable.self, scopeType: .weak) { _ in
+            return self.container
+        }
+        container.register(MainFrameModuleService.self, scopeType: .weak) {
+            return MainFrameModule(resolver: $0)
+        }
+        container.register(MainPageModuleService.self, scopeType: .weak) {
+            return MainPageModule(resolver: $0)
+        }
+        container.register(MinePageModuleService.self, scopeType: .weak) {
+            return MinePageModule(resolver: $0)
+        }
+    }
+    
+    func registMainPageServices() {
         
     }
     
+    func registMinePageServices() {
+        
+    }
 }

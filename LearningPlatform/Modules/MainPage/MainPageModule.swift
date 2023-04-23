@@ -8,6 +8,21 @@
 import Foundation
 import UIKit
 
-class MainPageModule: AppSetupManagerModule {
+protocol MainPageModuleService {
+    func createMainPageController() -> MainPageController
+}
+
+class MainPageModule: MainPageModuleService{
+    private let resolver: DIResolvable?
+    init(resolver: DIResolvable?) {
+        self.resolver = resolver
+    }
+    
+    func createMainPageController() -> MainPageController {
+        MainPageController(resolver: resolver)
+    }
+}
+
+extension MainPageModule: AppSetupManagerModule {
     
 }
