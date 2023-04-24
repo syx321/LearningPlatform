@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 
-final class MinePageController: UIViewController {
+final class MinePageController: BaseViewController {
     private let resolver: DIResolvable?
+    
+    
     init(resolver: DIResolvable?) {
         self.resolver = resolver
         super.init(nibName: nil, bundle: nil)
@@ -23,6 +25,7 @@ final class MinePageController: UIViewController {
 
 extension MinePageController {
     override func viewDidLoad() {
+        title = "我的"
         setupViews()
     }
     

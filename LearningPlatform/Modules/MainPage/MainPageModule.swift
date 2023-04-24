@@ -24,5 +24,18 @@ class MainPageModule: MainPageModuleService{
 }
 
 extension MainPageModule: AppSetupManagerModule {
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
+        MainFrameHandler.registerMainTabbarItem(item: self)
+        return true
+    }
+}
+
+extension MainPageModule: MainFrameHandling {
+    func viewControllerInMainTabBarController() -> UIViewController {
+        createMainPageController()
+    }
     
+    func tabBarItem() -> UITabBarItem {
+        UITabBarItem(title: "主页", image: UIImage(systemName: "house.circle"), selectedImage: UIImage(systemName: "house.circle.fill"))
+    }
 }

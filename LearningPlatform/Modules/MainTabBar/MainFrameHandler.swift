@@ -8,8 +8,14 @@
 import Foundation
 import UIKit
 
+protocol MainFrameHandling {
+    func viewControllerInMainTabBarController() -> UIViewController
+    func tabBarItem() -> UITabBarItem
+}
+
 class MainFrameHandler {
     static let shared = MainFrameHandler()
+    static var registeredItem: [MainFrameHandling] = []
     static let mainTabBarController = MainTabBarController()
     
     static func createMainTabBarController() {
@@ -18,5 +24,13 @@ class MainFrameHandler {
             fatalError("MainFrameHandler get nil window")
         }
         window?.rootViewController = mainTabBarController
+    }
+    
+    static func registerMainTabbarItem(item: MainFrameHandling) {
+        registeredItem.append(item)
+    }
+    
+    static func switchToTabbar() {
+        
     }
 }

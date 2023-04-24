@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class MainPageController: UIViewController {
+final class MainPageController: BaseViewController {
     private let resolver: DIResolvable?
     init(resolver: DIResolvable?) {
         self.resolver = resolver
@@ -22,6 +22,7 @@ final class MainPageController: UIViewController {
 
 extension MainPageController {
     override func viewDidLoad() {
+        title = "主页"
         setupViews()
     }
     
