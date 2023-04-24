@@ -10,6 +10,10 @@ import UIKit
 
 class BaseNavigationController: UINavigationController {
     
+    public var forcedlyShowBottomBarWhenPush: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         resetBarAppearance()
@@ -36,4 +40,10 @@ class BaseNavigationController: UINavigationController {
         navigationBar.standardAppearance.configureWithTransparentBackground()
     }
     
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if !forcedlyShowBottomBarWhenPush {
+            viewController.hidesBottomBarWhenPushed = viewControllers.count > 0
+        }
+        super.pushViewController(viewController, animated: animated)
+    }
 }

@@ -50,9 +50,10 @@ extension BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let _ = self.navigationController,
-           self.presentedViewController == self.navigationController {
-            self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        if let nav = self.navigationController,
+           self.parent == nav {
+            self.navigationController?.navigationBar.isHidden = perfersNavigationBarHidden
+            self.navigationController?.setNavigationBarHidden(perfersNavigationBarHidden, animated: animated)
             self.navigationController?.navigationBar.isTranslucent = perferNavigationBarTranslucent
             self.navigationController?.setToolbarHidden(true, animated: animated)
             if let _ = presentingViewController,
@@ -72,6 +73,7 @@ extension BaseViewController {
 }
 
 extension BaseViewController {
+    // TODO: 增加返回按钮点击事件
     @objc func backAction() {
         
     }

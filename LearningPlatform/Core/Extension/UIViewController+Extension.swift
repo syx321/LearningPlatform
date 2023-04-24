@@ -33,6 +33,12 @@ extension UIViewController {
             }
         }
     }
+    
+    func popController(animated: Bool, completion:(() -> Void)?) {
+        navigationController?.customPopViewController(animated: animated, completion: {
+            completion?()
+        })
+    }
 }
 
 extension UINavigationController {
