@@ -19,7 +19,9 @@ class MinePageModule: MinePageModuleService {
     }
     
     func createMinePageController() -> MinePageController {
-        MinePageController(resolver: resolver)
+        let vc = MinePageController(resolver: resolver)
+        vc.tabBarItem = tabBarItem()
+        return vc
     }
     
 }
@@ -33,7 +35,11 @@ extension MinePageModule: AppSetupManagerModule {
 
 extension MinePageModule: MainFrameHandling {
     func viewControllerInMainTabBarController() -> UIViewController {
-        createMinePageController()
+        let vc = createMinePageController()
+        let navigationController = BaseNavigationController()
+        navigationController.viewControllers = [vc]
+        navigationController.tabBarItem = self.tabBarItem()
+        return navigationController
     }
     
     func tabBarItem() -> UITabBarItem {

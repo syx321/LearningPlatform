@@ -16,7 +16,7 @@ class MainFrameModule: MainFrameModuleService {
     private let tabbarController = MainFrameHandler.mainTabBarController
     
     init(resolver: DIResolvable?) {
-        tabbarController.resolver = resolver
+        tabbarController?.resolver = resolver
     }
     
 }

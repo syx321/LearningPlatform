@@ -9,6 +9,18 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController {
+    public var perfersNavigationBarHidden: Bool {
+        return false
+    }
+    
+    public var perferNavigationBarTranslucent: Bool {
+        return false
+    }
+    
+    public var perferToolBarHidden: Bool {
+        return true
+    }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         modalPresentationCapturesStatusBarAppearance = true
@@ -40,13 +52,14 @@ extension BaseViewController {
         
         if let _ = self.navigationController,
            self.presentedViewController == self.navigationController {
-            self.navigationController?.setNavigationBarHidden(perfersNavigationBarHidden, animated: animated)
+            self.navigationController?.setNavigationBarHidden(true, animated: animated)
             self.navigationController?.navigationBar.isTranslucent = perferNavigationBarTranslucent
             self.navigationController?.setToolbarHidden(true, animated: animated)
             if let _ = presentingViewController,
                navigationController?.viewControllers.count == 1 {
-                
-                self.navigationItem.backBarButtonItem
+//                self.navigationItem.backBarButtonItem?.isHidden = false
+            } else {
+//                self.navigationItem.backBarButtonItem?.isHidden = true
             }
         }
     }
@@ -55,20 +68,6 @@ extension BaseViewController {
         didSet {
             self.navigationItem.title = title
         }
-    }
-}
-
-extension BaseViewController {
-    public var perfersNavigationBarHidden: Bool {
-        return false
-    }
-    
-    public var perferNavigationBarTranslucent: Bool {
-        return false
-    }
-    
-    public var perferToolBarHidden: Bool {
-        return true
     }
 }
 

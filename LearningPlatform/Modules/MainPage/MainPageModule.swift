@@ -13,6 +13,7 @@ protocol MainPageModuleService {
 }
 
 class MainPageModule: MainPageModuleService{
+    private var navigationController: UINavigationController?
     private let resolver: DIResolvable?
     init(resolver: DIResolvable?) {
         self.resolver = resolver
@@ -32,7 +33,11 @@ extension MainPageModule: AppSetupManagerModule {
 
 extension MainPageModule: MainFrameHandling {
     func viewControllerInMainTabBarController() -> UIViewController {
-        createMainPageController()
+        let mainController =  createMainPageController()
+        let navigationController = BaseNavigationController()
+        navigationController.viewControllers = [mainController]
+        navigationController.tabBarItem = self.tabBarItem()
+        return navigationController
     }
     
     func tabBarItem() -> UITabBarItem {

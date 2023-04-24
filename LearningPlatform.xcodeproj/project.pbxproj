@@ -16,6 +16,7 @@
 		4D8BBD7D29F5266F00332A7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BBD7C29F5266F00332A7F /* BaseViewController.swift */; };
 		4D8BBD7F29F5280500332A7F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BBD7E29F5280500332A7F /* UIViewController+Extension.swift */; };
 		4D8BBD8329F5406000332A7F /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BBD8229F5406000332A7F /* UIWindow+Extension.swift */; };
+		4D8BBD8729F65CC900332A7F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BBD8629F65CC900332A7F /* BaseNavigationController.swift */; };
 		4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */; };
 		4DB65D4829B85C43006C8A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4729B85C43006C8A6A /* Assets.xcassets */; };
 		4DB65D4B29B85C43006C8A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB65D4929B85C43006C8A6A /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 		4D8BBD7C29F5266F00332A7F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4D8BBD7E29F5280500332A7F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4D8BBD8229F5406000332A7F /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		4D8BBD8629F65CC900332A7F /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		4DB65D3B29B85C41006C8A6A /* LearningPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB65D3E29B85C41006C8A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB65D4729B85C43006C8A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,22 @@
 				4D353EF229CAAF74003C40C5 /* Assembler.swift */,
 			);
 			path = DIRegisterCenter;
+			sourceTree = "<group>";
+		};
+		4D8BBD8429F656BE00332A7F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D8BBD7C29F5266F00332A7F /* BaseViewController.swift */,
+				4D8BBD8629F65CC900332A7F /* BaseNavigationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D8BBD8529F656C800332A7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4DB65D3229B85C41006C8A6A = {
@@ -139,6 +157,7 @@
 		4DB65D5329B861FB006C8A6A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4DB65D5E29B865DB006C8A6A /* UIConst.swift */,
 				4DB65D5929B8653B006C8A6A /* UIView+Extension.swift */,
 				4DB65D5B29B86569006C8A6A /* Float+Extension.swift */,
 				4DB65D6029B86625006C8A6A /* Int+Extension.swift */,
@@ -172,7 +191,8 @@
 		4DB65D5D29B865D2006C8A6A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4DB65D5E29B865DB006C8A6A /* UIConst.swift */,
+				4D8BBD8529F656C800332A7F /* View */,
+				4D8BBD8429F656BE00332A7F /* Controller */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -181,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				4DB65D6329B86671006C8A6A /* KVStorage.swift */,
-				4D8BBD7C29F5266F00332A7F /* BaseViewController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -356,6 +375,7 @@
 				4D8BBD7D29F5266F00332A7F /* BaseViewController.swift in Sources */,
 				4D5A7EBF29F3E19F008EC989 /* MinePageController.swift in Sources */,
 				4DB65D6129B86625006C8A6A /* Int+Extension.swift in Sources */,
+				4D8BBD8729F65CC900332A7F /* BaseNavigationController.swift in Sources */,
 				4DB65D6E29B89660006C8A6A /* AppSetupManager.swift in Sources */,
 				4DB65D5C29B86569006C8A6A /* Float+Extension.swift in Sources */,
 				4D353EF529CADE55003C40C5 /* MainFrameModule.swift in Sources */,

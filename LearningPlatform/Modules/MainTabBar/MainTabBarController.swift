@@ -14,17 +14,18 @@ class MainTabBarController: UITabBarController {
 
 extension MainTabBarController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupView()
     }
     
     private func setupView() {
         tabBar.backgroundColor = .white
+        var viewControllers: [UIViewController] = []
         for item in MainFrameHandler.registeredItem {
             let controller = item.viewControllerInMainTabBarController()
-            controller.tabBarItem = item.tabBarItem()
-            addChild(controller)
+            viewControllers.append(controller)
         }
+        self.viewControllers = viewControllers
     }
 }

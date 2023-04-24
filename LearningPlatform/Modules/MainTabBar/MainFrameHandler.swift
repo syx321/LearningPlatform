@@ -10,19 +10,19 @@ import UIKit
 
 protocol MainFrameHandling {
     func viewControllerInMainTabBarController() -> UIViewController
-    func tabBarItem() -> UITabBarItem
 }
 
 class MainFrameHandler {
     static let shared = MainFrameHandler()
     static var registeredItem: [MainFrameHandling] = []
-    static let mainTabBarController = MainTabBarController()
+    static var mainTabBarController: MainTabBarController?
     
     static func createMainTabBarController() {
         guard let delegate = UIApplication.shared.delegate,
               let window = delegate.window else {
             fatalError("MainFrameHandler get nil window")
         }
+        mainTabBarController = MainTabBarController()
         window?.rootViewController = mainTabBarController
     }
     

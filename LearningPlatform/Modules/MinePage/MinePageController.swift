@@ -21,6 +21,10 @@ final class MinePageController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var perfersNavigationBarHidden: Bool {
+        return true
+    }
+    
 }
 
 extension MinePageController {
