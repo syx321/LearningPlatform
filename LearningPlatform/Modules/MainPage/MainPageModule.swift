@@ -15,18 +15,25 @@ protocol MainPageModuleService {
 class MainPageModule: MainPageModuleService{
     private var navigationController: UINavigationController?
     private let resolver: DIResolvable?
+    private let mainPageController: MainPageController
     init(resolver: DIResolvable?) {
         self.resolver = resolver
+        Assembler.shared.registMainPageServices()
+        mainPageController = MainPageController(resolver: resolver)
     }
     
     func createMainPageController() -> MainPageController {
-        MainPageController(resolver: resolver)
+        return mainPageController
     }
 }
 
 extension MainPageModule: AppSetupManagerModule {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         MainFrameHandler.registerMainTabbarItem(item: self)
+        return true
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         return true
     }
 }

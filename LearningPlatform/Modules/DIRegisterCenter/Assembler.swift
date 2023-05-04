@@ -34,10 +34,14 @@ extension Assembler: LiveAssembling {
         }
     }
     
+    /// 主页注册
     func registMainPageServices() {
-        
+        container.register(MainPageFeedViewService.self, scopeType: .weak) {_ in
+            return MainPageFeedView()
+        }
     }
     
+    /// 我的页面注册
     func registMinePageServices() {
         
     }

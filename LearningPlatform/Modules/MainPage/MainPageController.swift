@@ -10,9 +10,14 @@ import UIKit
 
 final class MainPageController: BaseViewController {
     private let resolver: DIResolvable?
+    private let useCase: MainPageFeedUseCase
+    private var mainPageFeedViewService: MainPageFeedViewService?
+    
     init(resolver: DIResolvable?) {
         self.resolver = resolver
+        useCase = MainPageFeedUseCase()
         super.init(nibName: nil, bundle: nil)
+        useCase.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -24,14 +29,35 @@ final class MainPageController: BaseViewController {
     }
 }
 
+// MARK: - private
 extension MainPageController {
     override func viewDidLoad() {
         title = "主页"
+        setupService()
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        useCase.fetchFeedData()
+    }
+    
+    private func setupService() {
+        mainPageFeedViewService = resolver?(MainPageFeedViewService.self)
     }
     
     private func setupViews() {
         view.backgroundColor = .red
+        
+        view.addSubview()
     }
+}
+
+extension MainPageController: MainPageFeedUseCaseDelegate {
+    func didFetchFeedModels(models: [MainPageFeedCellModel]?) {
+        guard let models = models, models.count > 0 else { return }
+        mainPageFeedViewService?.refreshData(models: models)
+    }
+    
+    
 }
 
