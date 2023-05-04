@@ -48,7 +48,6 @@ extension MainPageController {
     private func setupViews() {
         view.backgroundColor = .red
         
-        view.addSubview()
     }
 }
 
