@@ -11,8 +11,9 @@ import UIKit
 final class MainPageController: BaseViewController {
     private let resolver: DIResolvable?
     private let useCase: MainPageFeedUseCase
-    private var mainPageFeedViewService: MainPageFeedViewService?
-    
+    private lazy var collectionView: MainPageFeedView = {
+        MainPageFeedView(frame: .zero)
+    }()
     init(resolver: DIResolvable?) {
         self.resolver = resolver
         useCase = MainPageFeedUseCase()
@@ -42,21 +43,25 @@ extension MainPageController {
     }
     
     private func setupService() {
-        mainPageFeedViewService = resolver?(MainPageFeedViewService.self)
+        
     }
     
     private func setupViews() {
         view.backgroundColor = .red
         
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalToSuperview().offset(50)
+        }
     }
 }
 
 extension MainPageController: MainPageFeedUseCaseDelegate {
     func didFetchFeedModels(models: [MainPageFeedCellModel]?) {
         guard let models = models, models.count > 0 else { return }
-        mainPageFeedViewService?.refreshData(models: models)
+        collectionView.models = models
     }
     
     
 }
-

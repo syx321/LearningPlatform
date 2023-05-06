@@ -8,13 +8,8 @@
 import Foundation
 import UIKit
 
-protocol MainPageFeedViewService: AnyObject {
-    func getCollectionView() -> UIView
-    func refreshData(models: [MainPageFeedCellModel])
-}
-
 final class MainPageFeedView: UIView {
-    private var models: [MainPageFeedCellModel] = [] {
+    var models: [MainPageFeedCellModel] = [] {
         didSet {
             collectionView.reloadData()
         }
@@ -35,7 +30,7 @@ final class MainPageFeedView: UIView {
         v.showsVerticalScrollIndicator = false
         v.backgroundColor = .white
         v.contentInsetAdjustmentBehavior = .never
-        v.register(MainPageFeedCell.self, forCellWithReuseIdentifier: NSStringFromClass(MainPageFeedCell.self))
+        v.register(MainPageFeedCell.self, forCellWithReuseIdentifier: MainPageFeedCell.identifier)
         return v
     }()
     
@@ -47,27 +42,16 @@ final class MainPageFeedView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 // MARK: - private
 extension MainPageFeedView {
     private func setupView() {
+        backgroundColor = .white
         addSubview(collectionView)
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-    }
-}
-
-// MARK: - MainPageFeedViewService
-extension MainPageFeedView: MainPageFeedViewService {
-    func getCollectionView() -> UIView {
-        return MainPageFeedView(frame: .zero)
-    }
-    
-    func refreshData(models: [MainPageFeedCellModel]) {
-        self.models = models
     }
 }
 
@@ -81,19 +65,38 @@ extension MainPageFeedView: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension MainPageFeedView: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(MainPageFeedCell.self), for: indexPath) as? MainPageFeedCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainPageFeedCell.identifier, for: indexPath) as? MainPageFeedCell else {
             return UICollectionViewCell()
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? MainPageFeedCell else {
+            return
         }
         let model = models[indexPath.item, true]
         cell.model = model
-        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension MainPageFeedView: UICollectionViewDelegateFlowLayout {}
+extension MainPageFeedView: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth: CGFloat = (ScreenWidth - 10*2 - 5)/2
+        return CGSize(width: itemWidth, height: itemWidth * 4/3.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 80, left: 5, bottom: 90, right: 5)
+    }
+}
