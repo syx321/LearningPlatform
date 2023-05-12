@@ -30,5 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return AppSetupManager.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
+    public var shouldAutorotate = false
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if shouldAutorotate {
+            return .allButUpsideDown
+        } else {
+            return .portrait
+        }
+    }
 }
 

@@ -25,16 +25,15 @@ extension UIViewController {
         return isViewLoaded && view.window != nil && self.presentationController == nil
     }
     
-    func pushFromTopViewController(completion:(() -> Void)?) {
+    func pushFromTopViewController(completion:(() -> Void)? = nil) {
         if let navigationController = UIViewController.topViewController()?.navigationController {
-            navigationController.pushViewController(self, animated: true)
             navigationController.customPushViewController(viewController: self, animated: true) {
                 completion?()
             }
         }
     }
     
-    func popController(animated: Bool, completion:(() -> Void)?) {
+    func popController(animated: Bool, completion:(() -> Void)? = nil) {
         navigationController?.customPopViewController(animated: animated, completion: {
             completion?()
         })

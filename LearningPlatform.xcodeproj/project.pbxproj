@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D00C49B2A0510F600264F1F /* MainPageFeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00C49A2A0510F600264F1F /* MainPageFeedDetailView.swift */; };
-		4D00C49D2A05114E00264F1F /* MainPageFeedDetailPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00C49C2A05114E00264F1F /* MainPageFeedDetailPlugin.swift */; };
-		4D00C49F2A05117A00264F1F /* MainPageFeedDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00C49E2A05117A00264F1F /* MainPageFeedDetailModel.swift */; };
+		4D00C49B2A0510F600264F1F /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00C49A2A0510F600264F1F /* VideoPlayerVC.swift */; };
+		4D00C49D2A05114E00264F1F /* VideoPlayerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00C49C2A05114E00264F1F /* VideoPlayerPlugin.swift */; };
+		4D00C49F2A05117A00264F1F /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00C49E2A05117A00264F1F /* VideoPlayerModel.swift */; };
+		4D0AE0382A0B4BA900D6B5ED /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0AE0372A0B4BA900D6B5ED /* Double+Extension.swift */; };
+		4D0AE03B2A0B887F00D6B5ED /* VideoPlayerFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0AE03A2A0B887F00D6B5ED /* VideoPlayerFeedView.swift */; };
+		4D0AE03E2A0C054800D6B5ED /* UserFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0AE03D2A0C054800D6B5ED /* UserFeedVC.swift */; };
+		4D0AE0402A0D1F0F00D6B5ED /* UserFeedPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0AE03F2A0D1F0F00D6B5ED /* UserFeedPlugin.swift */; };
 		4D0CE47129FFE32500D4F5AE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE47029FFE32500D4F5AE /* UIImageView+Extension.swift */; };
 		4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */; };
 		4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D353EF229CAAF74003C40C5 /* Assembler.swift */; };
@@ -46,9 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D00C49A2A0510F600264F1F /* MainPageFeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFeedDetailView.swift; sourceTree = "<group>"; };
-		4D00C49C2A05114E00264F1F /* MainPageFeedDetailPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFeedDetailPlugin.swift; sourceTree = "<group>"; };
-		4D00C49E2A05117A00264F1F /* MainPageFeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFeedDetailModel.swift; sourceTree = "<group>"; };
+		4D00C49A2A0510F600264F1F /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
+		4D00C49C2A05114E00264F1F /* VideoPlayerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerPlugin.swift; sourceTree = "<group>"; };
+		4D00C49E2A05117A00264F1F /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
+		4D0AE0372A0B4BA900D6B5ED /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		4D0AE03A2A0B887F00D6B5ED /* VideoPlayerFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerFeedView.swift; sourceTree = "<group>"; };
+		4D0AE03D2A0C054800D6B5ED /* UserFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedVC.swift; sourceTree = "<group>"; };
+		4D0AE03F2A0D1F0F00D6B5ED /* UserFeedPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedPlugin.swift; sourceTree = "<group>"; };
 		4D0CE47029FFE32500D4F5AE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		4D353EF029CAAEE6003C40C5 /* LPDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPDIContainer.swift; sourceTree = "<group>"; };
 		4D353EF229CAAF74003C40C5 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
@@ -100,14 +108,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D00C4992A0510DA00264F1F /* MainPageFeedDetailView */ = {
+		4D00C4992A0510DA00264F1F /* VideoPlayerVC */ = {
 			isa = PBXGroup;
 			children = (
-				4D00C49A2A0510F600264F1F /* MainPageFeedDetailView.swift */,
-				4D00C49E2A05117A00264F1F /* MainPageFeedDetailModel.swift */,
-				4D00C49C2A05114E00264F1F /* MainPageFeedDetailPlugin.swift */,
+				4D00C49C2A05114E00264F1F /* VideoPlayerPlugin.swift */,
+				4D0AE03A2A0B887F00D6B5ED /* VideoPlayerFeedView.swift */,
+				4D00C49A2A0510F600264F1F /* VideoPlayerVC.swift */,
+				4D00C49E2A05117A00264F1F /* VideoPlayerModel.swift */,
 			);
-			path = MainPageFeedDetailView;
+			path = VideoPlayerVC;
+			sourceTree = "<group>";
+		};
+		4D0AE03C2A0C053700D6B5ED /* UserFeedVC */ = {
+			isa = PBXGroup;
+			children = (
+				4D0AE03F2A0D1F0F00D6B5ED /* UserFeedPlugin.swift */,
+				4D0AE03D2A0C054800D6B5ED /* UserFeedVC.swift */,
+			);
+			path = UserFeedVC;
 			sourceTree = "<group>";
 		};
 		4D353EED29CAAE90003C40C5 /* DIRegisterCenter */ = {
@@ -195,6 +213,7 @@
 				4DB65D5E29B865DB006C8A6A /* UIConst.swift */,
 				4DB65D5929B8653B006C8A6A /* UIView+Extension.swift */,
 				4DB65D5B29B86569006C8A6A /* Float+Extension.swift */,
+				4D0AE0372A0B4BA900D6B5ED /* Double+Extension.swift */,
 				4DB65D6029B86625006C8A6A /* Int+Extension.swift */,
 				4DB65D6529B866BF006C8A6A /* Optional+Extension.swift */,
 				4DB65D6729B86716006C8A6A /* Date+Extension.swift */,
@@ -244,7 +263,6 @@
 		4DB65D7329B98617006C8A6A /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				4D00C4992A0510DA00264F1F /* MainPageFeedDetailView */,
 				4D8BBD8A29F6960800332A7F /* MainPageFeedView */,
 				4DB65D7629B9864D006C8A6A /* MainPageModule.swift */,
 				4D5A7EBC29F3DE92008EC989 /* MainPageController.swift */,
@@ -265,6 +283,8 @@
 		4DB65D7529B98639006C8A6A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D0AE03C2A0C053700D6B5ED /* UserFeedVC */,
+				4D00C4992A0510DA00264F1F /* VideoPlayerVC */,
 				4DB65D5429B862DF006C8A6A /* MainTabBar */,
 				4D353EED29CAAE90003C40C5 /* DIRegisterCenter */,
 				4DB65D7429B9862E006C8A6A /* MinePage */,
@@ -407,15 +427,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB65D5F29B865DB006C8A6A /* UIConst.swift in Sources */,
-				4D00C49B2A0510F600264F1F /* MainPageFeedDetailView.swift in Sources */,
+				4D0AE0402A0D1F0F00D6B5ED /* UserFeedPlugin.swift in Sources */,
+				4D0AE03B2A0B887F00D6B5ED /* VideoPlayerFeedView.swift in Sources */,
+				4D00C49B2A0510F600264F1F /* VideoPlayerVC.swift in Sources */,
 				4D8BBD8C29F696F500332A7F /* MainPageFeedCellModel.swift in Sources */,
 				4DB65D5A29B8653B006C8A6A /* UIView+Extension.swift in Sources */,
 				4DB65D6C29B86984006C8A6A /* Array+Extension.swift in Sources */,
+				4D0AE0382A0B4BA900D6B5ED /* Double+Extension.swift in Sources */,
 				4D353EF329CAAF74003C40C5 /* Assembler.swift in Sources */,
 				4DB65D7029B896D7006C8A6A /* MainFrameHandler.swift in Sources */,
 				4D8BBD7D29F5266F00332A7F /* BaseViewController.swift in Sources */,
 				4D5A7EBF29F3E19F008EC989 /* MinePageController.swift in Sources */,
 				4DB65D6129B86625006C8A6A /* Int+Extension.swift in Sources */,
+				4D0AE03E2A0C054800D6B5ED /* UserFeedVC.swift in Sources */,
 				4D8BBD8729F65CC900332A7F /* BaseNavigationController.swift in Sources */,
 				4DB65D6E29B89660006C8A6A /* AppSetupManager.swift in Sources */,
 				4DB65D5C29B86569006C8A6A /* Float+Extension.swift in Sources */,
@@ -424,7 +448,7 @@
 				4D0CE47129FFE32500D4F5AE /* UIImageView+Extension.swift in Sources */,
 				4DB65D6429B86671006C8A6A /* KVStorage.swift in Sources */,
 				4D78458E29F7841900080E36 /* MainPageFeedUseCase.swift in Sources */,
-				4D00C49F2A05117A00264F1F /* MainPageFeedDetailModel.swift in Sources */,
+				4D00C49F2A05117A00264F1F /* VideoPlayerModel.swift in Sources */,
 				4DB65D7229B896F0006C8A6A /* MainTabBarController.swift in Sources */,
 				4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */,
 				4D8BBD8329F5406000332A7F /* UIWindow+Extension.swift in Sources */,
@@ -433,7 +457,7 @@
 				4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */,
 				4D8BBD8929F6939C00332A7F /* MainPageFeedView.swift in Sources */,
 				4D8BBD7F29F5280500332A7F /* UIViewController+Extension.swift in Sources */,
-				4D00C49D2A05114E00264F1F /* MainPageFeedDetailPlugin.swift in Sources */,
+				4D00C49D2A05114E00264F1F /* VideoPlayerPlugin.swift in Sources */,
 				4D8BBD8E29F696FE00332A7F /* MainPageFeedCell.swift in Sources */,
 				4DB65D6A29B8695A006C8A6A /* FoundationConst.swift in Sources */,
 				4D5A7EBD29F3DE92008EC989 /* MainPageController.swift in Sources */,
@@ -592,6 +616,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -607,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = syx.LearningPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "LearningPlatform/Modules/MainPage/MainPageFeedDetailView/LearningPlatform-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,6 +654,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -644,7 +670,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = syx.LearningPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "LearningPlatform/Modules/MainPage/MainPageFeedDetailView/LearningPlatform-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

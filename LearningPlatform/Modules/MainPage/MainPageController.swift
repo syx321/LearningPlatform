@@ -11,12 +11,17 @@ import UIKit
 final class MainPageController: BaseViewController {
     private let resolver: DIResolvable?
     private let useCase: MainPageFeedUseCase
+    private var videoPlayerService: VideoPlayerService?
+    
     private lazy var collectionView: MainPageFeedView = {
-        MainPageFeedView(frame: .zero)
+        let v = MainPageFeedView(frame: .zero)
+        v.delegate = self
+        return v
     }()
+    
     init(resolver: DIResolvable?) {
         self.resolver = resolver
-        useCase = MainPageFeedUseCase()
+        useCase = MainPageFeedUseCase(resolver: resolver)
         super.init(nibName: nil, bundle: nil)
         useCase.delegate = self
     }
@@ -28,10 +33,7 @@ final class MainPageController: BaseViewController {
     override var perfersNavigationBarHidden: Bool {
         return false
     }
-}
-
-// MARK: - private
-extension MainPageController {
+    
     override func viewDidLoad() {
         title = "主页"
         setupService()
@@ -42,12 +44,19 @@ extension MainPageController {
         useCase.fetchFeedData()
     }
     
-    private func setupService() {
-        
+    override var shouldAutorotate: Bool {
+        return false
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+}
+
+// MARK: - private
+extension MainPageController {
     private func setupViews() {
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
@@ -55,13 +64,23 @@ extension MainPageController {
             $0.top.equalToSuperview().offset(50)
         }
     }
+    
+    private func setupService() {
+        videoPlayerService = resolver?(VideoPlayerService.self)
+    }
 }
 
+// MARK: - MainPageFeedUseCaseDelegate
 extension MainPageController: MainPageFeedUseCaseDelegate {
     func didFetchFeedModels(models: [MainPageFeedCellModel]?) {
         guard let models = models, models.count > 0 else { return }
         collectionView.models = models
     }
-    
-    
+}
+
+// MARK: - MainPageFeedViewDelegate
+extension MainPageController: MainPageFeedViewDelegate {
+    func didClickCell(model: MainPageFeedCellModel) {
+        useCase.gotoPlayerPage(id: model.id)
+    }
 }

@@ -8,7 +8,20 @@
 import Foundation
 import UIKit
 
+protocol MainPageFeedViewDelegate: AnyObject {
+    func didClickCell(model: MainPageFeedCellModel)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+}
+
+extension MainPageFeedViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView { return UICollectionReusableView() }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize { return .zero }
+}
+
 final class MainPageFeedView: UIView {
+    weak var delegate: MainPageFeedViewDelegate?
+    
     var models: [MainPageFeedCellModel] = [] {
         didSet {
             collectionView.reloadData()
@@ -58,8 +71,8 @@ extension MainPageFeedView {
 // MARK: - UICollectionViewDelegate
 extension MainPageFeedView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let model = models?[indexPath.item, true] else { return }
-        
+        guard let model = models[indexPath.item, true] else { return }
+        delegate?.didClickCell(model: model)
     }
 }
 
@@ -87,6 +100,11 @@ extension MainPageFeedView: UICollectionViewDataSource {
         let model = models[indexPath.item, true]
         cell.model = model
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let delegate = delegate else { return UICollectionReusableView() }
+        return delegate.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -98,5 +116,10 @@ extension MainPageFeedView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 80, left: 5, bottom: 90, right: 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        guard let delegate = delegate else { return .zero }
+        return delegate.collectionView(collectionView, layout: collectionViewLayout, referenceSizeForHeaderInSection: section)
     }
 }

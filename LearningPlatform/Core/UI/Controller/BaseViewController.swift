@@ -21,6 +21,18 @@ class BaseViewController: UIViewController {
         return true
     }
     
+    override var title: String? {
+        didSet {
+            self.navigationItem.title = title
+        }
+    }
+    
+    public var shouldAllowRotate: Bool = false {
+        didSet {
+            shouldAutoRotate(allow: shouldAllowRotate)
+        }
+    }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         modalPresentationCapturesStatusBarAppearance = true
@@ -36,6 +48,16 @@ class BaseViewController: UIViewController {
         v.imageView?.image = UIImage(systemName: "chevron.backward")
         v.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         return v
+    }
+    
+    func shouldAutoRotate(allow: Bool) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.shouldAutorotate = allow
+    }
+    
+    func setNavigationBarHidden(_ hidden: Bool, animated: Bool = true) {
+        self.navigationController?.navigationBar.isHidden = hidden
+        self.navigationController?.setNavigationBarHidden(hidden, animated: animated)
     }
 }
 
@@ -65,11 +87,15 @@ extension BaseViewController {
         }
     }
     
-    override var title: String? {
-        didSet {
-            self.navigationItem.title = title
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        shouldAutoRotate(allow: shouldAllowRotate)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        shouldAutoRotate(allow: false)
+    }
+    
 }
 
 extension BaseViewController {

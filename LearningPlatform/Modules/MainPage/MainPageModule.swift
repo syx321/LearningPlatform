@@ -12,7 +12,7 @@ protocol MainPageModuleService {
     func createMainPageController() -> MainPageController
 }
 
-class MainPageModule: MainPageModuleService{
+class MainPageModule: MainPageModuleService {
     private var navigationController: UINavigationController?
     private let resolver: DIResolvable?
     private let mainPageController: MainPageController

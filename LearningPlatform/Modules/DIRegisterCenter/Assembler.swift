@@ -36,6 +36,12 @@ extension Assembler: LiveAssembling {
     
     /// 主页注册
     func registMainPageServices() {
+        container.register(VideoPlayerService.self, scopeType: .weak) {
+            return VideoPlayerPlugin(resolver: $0)
+        }
+        container.register(UserFeedService.self, scopeType: .weak) {
+            return UserFeedPlugin(resolver: $0)
+        }
     }
     
     /// 我的页面注册

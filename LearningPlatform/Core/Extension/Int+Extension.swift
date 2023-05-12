@@ -61,6 +61,30 @@ extension Int {
     @inlinable public var cgFloat: CGFloat { CGFloat(self) }
 }
 
+extension Int {
+    // 秒数转换成天数
+    var hour: Int {
+        guard self > 0 else {
+            return 0
+        }
+        return Int(Float(self) / 3600.0)
+    }
+    
+    var minute: Int {
+        guard self > 0 else {
+            return 0
+        }
+        return Int((Float(self).truncatingRemainder(dividingBy: 3600)) / 60)
+    }
+    
+    var second: Int {
+        guard self > 0 else {
+            return 0
+        }
+        return Int(Float(self).truncatingRemainder(dividingBy: 60))
+    }
+}
+
 extension UInt {
     @inlinable public var int: Int { Int(self) }
     @inlinable public var double: Double { Double(self) }
