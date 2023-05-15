@@ -21,6 +21,8 @@
 		4D5A7EBD29F3DE92008EC989 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A7EBC29F3DE92008EC989 /* MainPageController.swift */; };
 		4D5A7EBF29F3E19F008EC989 /* MinePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A7EBE29F3E19F008EC989 /* MinePageController.swift */; };
 		4D78458E29F7841900080E36 /* MainPageFeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78458D29F7841900080E36 /* MainPageFeedUseCase.swift */; };
+		4D7FE3572A0E36E900822D0B /* MinePageLogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7FE3562A0E36E900822D0B /* MinePageLogInVC.swift */; };
+		4D7FE3592A1100CD00822D0B /* MinePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7FE3582A1100CD00822D0B /* MinePageModel.swift */; };
 		4D8BBD7B29F405E900332A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8BBD7929F405E900332A7F /* Main.storyboard */; };
 		4D8BBD7D29F5266F00332A7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BBD7C29F5266F00332A7F /* BaseViewController.swift */; };
 		4D8BBD7F29F5280500332A7F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BBD7E29F5280500332A7F /* UIViewController+Extension.swift */; };
@@ -64,6 +66,8 @@
 		4D5A7EBC29F3DE92008EC989 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		4D5A7EBE29F3E19F008EC989 /* MinePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinePageController.swift; sourceTree = "<group>"; };
 		4D78458D29F7841900080E36 /* MainPageFeedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageFeedUseCase.swift; sourceTree = "<group>"; };
+		4D7FE3562A0E36E900822D0B /* MinePageLogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinePageLogInVC.swift; sourceTree = "<group>"; };
+		4D7FE3582A1100CD00822D0B /* MinePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinePageModel.swift; sourceTree = "<group>"; };
 		4D8BBD7A29F405E900332A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D8BBD7C29F5266F00332A7F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4D8BBD7E29F5280500332A7F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -275,7 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				4DB65D7829B98663006C8A6A /* MinePageModule.swift */,
+				4D7FE3582A1100CD00822D0B /* MinePageModel.swift */,
 				4D5A7EBE29F3E19F008EC989 /* MinePageController.swift */,
+				4D7FE3562A0E36E900822D0B /* MinePageLogInVC.swift */,
 			);
 			path = MinePage;
 			sourceTree = "<group>";
@@ -451,8 +457,10 @@
 				4D00C49F2A05117A00264F1F /* VideoPlayerModel.swift in Sources */,
 				4DB65D7229B896F0006C8A6A /* MainTabBarController.swift in Sources */,
 				4D353EF129CAAEE6003C40C5 /* LPDIContainer.swift in Sources */,
+				4D7FE3592A1100CD00822D0B /* MinePageModel.swift in Sources */,
 				4D8BBD8329F5406000332A7F /* UIWindow+Extension.swift in Sources */,
 				4DB65D7929B98663006C8A6A /* MinePageModule.swift in Sources */,
+				4D7FE3572A0E36E900822D0B /* MinePageLogInVC.swift in Sources */,
 				4DB65D7729B9864D006C8A6A /* MainPageModule.swift in Sources */,
 				4DB65D3F29B85C41006C8A6A /* AppDelegate.swift in Sources */,
 				4D8BBD8929F6939C00332A7F /* MainPageFeedView.swift in Sources */,

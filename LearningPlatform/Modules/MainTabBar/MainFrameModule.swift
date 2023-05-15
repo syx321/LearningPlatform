@@ -13,6 +13,9 @@ protocol MainFrameModuleService {
 }
 
 class MainFrameModule: MainFrameModuleService {
+    @KVStorage(key: "userDidLogIn", defaultValue: false)
+    static var userDidLogIn: Bool
+    
     private let tabbarController = MainFrameHandler.mainTabBarController
     
     init(resolver: DIResolvable?) {
@@ -35,7 +38,7 @@ extension MainFrameModule: AppSetupManagerModule {
     
     /// 用户登陆
     func userDidLogin() {
-        
+        MainFrameModule.userDidLogIn = true
     }
     
     /// 用户退出登陆

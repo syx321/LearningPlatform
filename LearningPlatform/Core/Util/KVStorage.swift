@@ -80,3 +80,14 @@ public struct KVStorage<T> {
         return fullKey
     }
 }
+
+extension KVStorage {
+    public init(key: String, seprator: String = ":", defaultValue: T, getter: Getter<T>? = nil, setter: Setter<T>? = nil) {
+        self.init(key: key, defaultValue: defaultValue, affix: KVStorage.makeAffix(seprator: seprator), getter: getter, setter: setter)
+    }
+    
+    @inlinable static func makeAffix(seprator: String = ":", id: String = "") -> String {
+        let postfix = seprator.appending(id)
+        return postfix
+    }
+}

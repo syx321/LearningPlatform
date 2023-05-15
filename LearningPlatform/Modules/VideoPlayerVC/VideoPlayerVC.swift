@@ -156,8 +156,8 @@ extension VideoPlayerVC {
         view.backgroundColor = .yellow
         view.addSubview(playerContainerView)
         playerContainerView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.top.equalToSuperview().offset(92)
+            $0.top.leading.trailing.equalToSuperview()
+//            $0.top.equalToSuperview().offset(92)
             $0.height.equalTo(300)
         }
         playerContainerView.addSubview(pauseBtn)
@@ -210,8 +210,8 @@ extension VideoPlayerVC {
         } else {
             setNavigationBarHidden(false)
             playerContainerView.snp.remakeConstraints {
-                $0.leading.trailing.equalToSuperview()
-                $0.top.equalToSuperview().offset(92)
+                $0.top.leading.trailing.equalToSuperview()
+//                $0.top.equalToSuperview().offset(92)
                 $0.height.equalTo(300)
             }
             feedView.isHidden = false
@@ -320,11 +320,11 @@ extension VideoPlayerVC: MainPageFeedUseCaseDelegate {
 }
 
 extension VideoPlayerVC: VideoPlayerFeedViewDelegate {
-    func didTapAvatar(userId: String) {
-        
+    func didTapAvatar(model: VideoPlayerModel) {
+        userFeedService?.showUserFeedVC(model: model)
     }
     
-    func didTapFollow(userId: String) {
+    func didTapFollow(model: VideoPlayerModel) {
         
     }
     

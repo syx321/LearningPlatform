@@ -16,6 +16,7 @@ extension MainTabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         setupView()
     }
     
@@ -27,5 +28,21 @@ extension MainTabBarController {
             viewControllers.append(controller)
         }
         self.viewControllers = viewControllers
+    }
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if let navController = viewController as? BaseNavigationController,
+           let vc = navController.viewControllers[0, true] as? MinePageController {
+//            if MainFrameModule.userDidLogIn {
+                return true
+//            } else {
+//                MinePageModule.presentLogInController()
+//            }
+        } else {
+            return true
+        }
+        return false
     }
 }

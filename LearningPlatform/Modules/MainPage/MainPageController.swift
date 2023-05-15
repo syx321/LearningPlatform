@@ -60,8 +60,8 @@ extension MainPageController {
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview()
-            $0.top.equalToSuperview().offset(50)
+            $0.top.leading.trailing.bottom.equalToSuperview()
+//            $0.top.equalToSuperview().offset(48)
         }
     }
     

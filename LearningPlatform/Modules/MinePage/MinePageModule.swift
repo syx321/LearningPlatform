@@ -10,6 +10,7 @@ import UIKit
 
 protocol MinePageModuleService {
     func createMinePageController() -> MinePageController
+    static func presentLogInController()
 }
 
 class MinePageModule: MinePageModuleService {
@@ -22,6 +23,11 @@ class MinePageModule: MinePageModuleService {
         let vc = MinePageController(resolver: resolver)
         vc.tabBarItem = tabBarItem()
         return vc
+    }
+    
+    static func presentLogInController() {
+        let vc = MinePageLogInVC()
+        UIViewController.topViewControllerInRootWindow()?.present(vc, animated: true)
     }
     
 }

@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 protocol VideoPlayerFeedViewDelegate: AnyObject {
-    func didTapAvatar(userId: String)
-    func didTapFollow(userId: String)
+    func didTapAvatar(model: VideoPlayerModel)
+    func didTapFollow(model: VideoPlayerModel)
     func didClickCell(model: MainPageFeedCellModel)
 }
 
 protocol VideoPlayerFeedViewHeaderViewDelegate: AnyObject {
-    func didTapAvatar(userId: String)
-    func didTapFollow(userId: String)
+    func didTapAvatar(model: VideoPlayerModel)
+    func didTapFollow(model: VideoPlayerModel)
 }
 
 final class VideoPlayerFeedViewHeaderView: UICollectionReusableView {
@@ -35,6 +35,7 @@ final class VideoPlayerFeedViewHeaderView: UICollectionReusableView {
     }
     private lazy var avatarImageView: UIImageView = {
         let v = UIImageView()
+        v.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAvatar))
         v.addGestureRecognizer(tapGestureRecognizer)
         return v
@@ -99,13 +100,13 @@ final class VideoPlayerFeedViewHeaderView: UICollectionReusableView {
     }
     
     @objc private func tapAvatar() {
-        guard let ownerId = model?.ownerId else { return }
-        delegate?.didTapAvatar(userId: ownerId)
+        guard let model = model else { return }
+        delegate?.didTapAvatar(model: model)
     }
     
     @objc private func tapFollow() {
-        guard let ownerId = model?.ownerId else { return }
-        delegate?.didTapFollow(userId: ownerId)
+        guard let model = model else { return }
+        delegate?.didTapFollow(model: model)
     }
 }
 
@@ -176,13 +177,11 @@ extension VideoPlayerFeedView: MainPageFeedViewDelegate {
 }
 
 extension VideoPlayerFeedView: VideoPlayerFeedViewHeaderViewDelegate {
-    func didTapAvatar(userId: String) {
-        delegate?.didTapAvatar(userId: userId)
+    func didTapAvatar(model: VideoPlayerModel) {
+        delegate?.didTapAvatar(model: model)
     }
-    
-    func didTapFollow(userId: String) {
-        delegate?.didTapFollow(userId: userId)
+    func didTapFollow(model: VideoPlayerModel) {
+        delegate?.didTapFollow(model: model)
     }
-    
     
 }
